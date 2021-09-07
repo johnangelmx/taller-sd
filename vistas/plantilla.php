@@ -3,7 +3,6 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +30,6 @@ session_start();
   <script src="vistas/plugins/sa2/sweetalert2.all.js"></script>
   <script src="vistas/bower_components/datatables.net-bs/js/dataTables.responsive.min.js"></script>
   <script src="vistas/bower_components/datatables.net-bs/js/responsive.bootstrap.min.js"></script>
-
   <!-- InputMask -->
   <script src="vistas/plugins/input-mask/jquery.inputmask.js"></script>
   <script src="vistas/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
@@ -41,15 +39,12 @@ session_start();
   <script src="vistas/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
   <script src="vistas/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
   <script src="vistas/plugins/iCheck/icheck.min.js"></script>
-
-
   <style>
     .bc {
       background: #222d32;
       background-color: #222d32;
       color: white;
     }
-
     .bc:hover,
     .bc:active,
     .bc::before,
@@ -58,15 +53,12 @@ session_start();
       background-color: #222d32;
       color: white;
     }
-
     .swal2-popup {
       font-size: 1.2em !important;
     }
   </style>
 </head>
-
 <body class="hold-transition skin-black sidebar-collapse sidebar-mini login-page">
-
   <?php
   if (isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok") {
     echo '<div class="wrapper">';
@@ -103,7 +95,5 @@ session_start();
   <script src="vistas/js/clientes.js"></script>
   <script src="vistas/js/categorias.js"></script>
   <script src="vistas/js/productos.js"></script>
-
 </body>
-
 </html>

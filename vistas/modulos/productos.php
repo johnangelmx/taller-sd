@@ -11,45 +11,45 @@
   <section class="content">
     <div class="box">
       <div class="box-header with-border">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarProducto">
+        <button class="btn btn-default bc" data-toggle="modal" data-target="#modalAgregarProducto">
           Agregar producto
         </button>
       </div>
       <div class="box-body">
-        <table class="table table-bordered table-striped dt-responsive tablaProductos" width="100%">
-          <thead>
-            <tr>
-              <th style="width:10px">#</th>
-              <th>Imagen</th>
-              <th>Código</th>
-              <th>Descripción</th>
-              <th>Categoría</th>
-              <th>Stock</th>
-              <th>Precio de compra</th>
-              <th>Precio de venta</th>
-              <th>Agregado</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <!--   <tbody>
+       <table class="table table-bordered table-striped dt-responsive tablaProductos" width="100%">
+        <thead>
+          <tr>
+           <th style="width:10px">#</th>
+           <th>Imagen</th>
+           <th>Código</th>
+           <th>Descripción</th>
+           <th>Categoría</th>
+           <th>Stock</th>
+           <th>Precio de compra</th>
+           <th>Precio de venta</th>
+           <th>Agregado</th>
+           <th>Acciones</th>
+         </tr> 
+        </thead>
+      <!--   <tbody>
         <?php
         $item = null;
         $valor = null;
         $productos = ControladorProductos::ctrMostrarProductos($item, $valor);
         foreach ($productos as $key => $value) {
           echo '<tr>
-                  <td>' . ($key + 1) . '</td>
+                  <td>'.($key+1).'</td>
                   <td><img src="vistas/img/productos/default/anonymous.png" class="img-thumbnail" width="40px"></td>
-                  <td>' . $value["codigo"] . '</td>
-                  <td>' . $value["descripcion"] . '</td>';
-          $item = "id";
-          $valor = $value["id_categoria"];
-          $categoria = ControladorCategorias::ctrMostrarCategorias($item, $valor);
-          echo '<td>' . $categoria["categoria"] . '</td>
-                  <td>' . $value["stock"] . '</td>
-                  <td>' . $value["precio_compra"] . '</td>
-                  <td>' . $value["precio_venta"] . '</td>
-                  <td>' . $value["fecha"] . '</td>
+                  <td>'.$value["codigo"].'</td>
+                  <td>'.$value["descripcion"].'</td>';
+                  $item = "id";
+                  $valor = $value["id_categoria"];
+                  $categoria = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+                 echo '<td>'.$categoria["categoria"].'</td>
+                  <td>'.$value["stock"].'</td>
+                  <td>'.$value["precio_compra"].'</td>
+                  <td>'.$value["precio_venta"].'</td>
+                  <td>'.$value["fecha"].'</td>
                   <td>
                     <div class="btn-group">
                       <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
@@ -60,7 +60,7 @@
         }
         ?>
         </tbody> -->
-        </table>
+       </table>
       </div>
     </div>
   </section>
@@ -75,8 +75,8 @@ MODAL AGREGAR PRODUCTO
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-header bc" >
+          <button type="button" class="close " data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Agregar producto</h4>
         </div>
         <!--=====================================
@@ -87,7 +87,7 @@ MODAL AGREGAR PRODUCTO
             <!-- ENTRADA PARA SELECCIONAR CATEGORÍA -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
                 <select class="form-control input-lg" id="nuevaCategoria" name="nuevaCategoria" required>
                   <option value="">Selecionar categoría</option>
                   <?php
@@ -95,7 +95,7 @@ MODAL AGREGAR PRODUCTO
                   $valor = null;
                   $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
                   foreach ($categorias as $key => $value) {
-                    echo '<option value="' . $value["id"] . '">' . $value["categoria"] . '</option>';
+                    echo '<option value="'.$value["id"].'">'.$value["categoria"].'</option>';
                   }
                   ?>
                 </select>
@@ -104,59 +104,59 @@ MODAL AGREGAR PRODUCTO
             <!-- ENTRADA PARA EL CÓDIGO -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-code"></i></span>
+                <span class="input-group-addon"><i class="fa fa-code"></i></span> 
                 <input type="text" class="form-control input-lg" id="nuevoCodigo" name="nuevoCodigo" placeholder="Ingresar código" readonly required>
               </div>
             </div>
             <!-- ENTRADA PARA LA DESCRIPCIÓN -->
-            <div class="form-group">
+             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
+                <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span> 
                 <input type="text" class="form-control input-lg" name="nuevaDescripcion" placeholder="Ingresar descripción" required>
               </div>
             </div>
-            <!-- ENTRADA PARA STOCK -->
-            <div class="form-group">
+             <!-- ENTRADA PARA STOCK -->
+             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-check"></i></span>
+                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
                 <input type="number" class="form-control input-lg" name="nuevoStock" min="0" placeholder="Stock" required>
               </div>
             </div>
-            <!-- ENTRADA PARA PRECIO COMPRA -->
-            <div class="form-group row">
-              <div class="col-xs-12 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span>
-                  <input type="number" class="form-control input-lg" id="nuevoPrecioCompra" name="nuevoPrecioCompra" min="0" step="any" placeholder="Precio de compra" required>
-                </div>
-              </div>
-              <!-- ENTRADA PARA PRECIO VENTA -->
-              <div class="col-xs-12 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span>
-                  <input type="number" class="form-control input-lg" id="nuevoPrecioVenta" name="nuevoPrecioVenta" min="0" step="any" placeholder="Precio de venta" required>
-                </div>
-                <br>
-                <!-- CHECKBOX PARA PORCENTAJE -->
-                <div class="col-xs-6">
-                  <div class="form-group">
-                    <label>
-                      <input type="checkbox" class="minimal porcentaje" checked>
-                      Utilizar procentaje
-                    </label>
-                  </div>
-                </div>
-                <!-- ENTRADA PARA PORCENTAJE -->
-                <div class="col-xs-6" style="padding:0">
+             <!-- ENTRADA PARA PRECIO COMPRA -->
+             <div class="form-group row">
+                <div class="col-xs-12 col-sm-6">
                   <div class="input-group">
-                    <input type="number" class="form-control input-lg nuevoPorcentaje" min="0" value="40" required>
-                    <span class="input-group-addon"><i class="fa fa-percent"></i></span>
+                    <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span> 
+                    <input type="number" class="form-control input-lg" id="nuevoPrecioCompra" name="nuevoPrecioCompra" min="0" step="any" placeholder="Precio de compra" required>
                   </div>
                 </div>
-              </div>
+                <!-- ENTRADA PARA PRECIO VENTA -->
+                <div class="col-xs-12 col-sm-6">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span> 
+                    <input type="number" class="form-control input-lg" id="nuevoPrecioVenta" name="nuevoPrecioVenta" min="0" step="any" placeholder="Precio de venta" required>
+                  </div>
+                  <br>
+                  <!-- CHECKBOX PARA PORCENTAJE -->
+                  <div class="col-xs-6">
+                    <div class="form-group">
+                      <label>
+                        <input type="checkbox" class="minimal porcentaje" checked>
+                        Utilizar procentaje
+                      </label>
+                    </div>
+                  </div>
+                  <!-- ENTRADA PARA PORCENTAJE -->
+                  <div class="col-xs-6" style="padding:0">
+                    <div class="input-group">
+                      <input type="number" class="form-control input-lg nuevoPorcentaje" min="0" value="40" required>
+                      <span class="input-group-addon"><i class="fa fa-percent"></i></span>
+                    </div>
+                  </div>
+                </div>
             </div>
             <!-- ENTRADA PARA SUBIR FOTO -->
-            <div class="form-group">
+             <div class="form-group">
               <div class="panel">SUBIR IMAGEN</div>
               <input type="file" class="nuevaImagen" name="nuevaImagen">
               <p class="help-block">Peso máximo de la imagen 2MB</p>
@@ -168,14 +168,14 @@ MODAL AGREGAR PRODUCTO
         PIE DEL MODAL
         ======================================-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-          <button type="submit" class="btn btn-primary">Guardar producto</button>
+          <button type="button" class="btn btn-default pull-left bc" data-dismiss="modal">Salir</button>
+          <button type="submit" class="btn btn-default">Guardar producto</button>
         </div>
       </form>
-      <?php
-      $crearProducto = new ControladorProductos();
-      $crearProducto->ctrCrearProducto();
-      ?>
+        <?php
+          $crearProducto = new ControladorProductos();
+          $crearProducto -> ctrCrearProducto();
+        ?>  
     </div>
   </div>
 </div>
@@ -189,7 +189,7 @@ MODAL EDITAR PRODUCTO
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header bc" >
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Editar producto</h4>
         </div>
@@ -201,8 +201,8 @@ MODAL EDITAR PRODUCTO
             <!-- ENTRADA PARA SELECCIONAR CATEGORÍA -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
-                <select class="form-control input-lg" name="editarCategoria" readonly required>
+                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <select class="form-control input-lg"  name="editarCategoria" readonly required>
                   <option id="editarCategoria"></option>
                 </select>
               </div>
@@ -210,59 +210,59 @@ MODAL EDITAR PRODUCTO
             <!-- ENTRADA PARA EL CÓDIGO -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-code"></i></span>
+                <span class="input-group-addon"><i class="fa fa-code"></i></span> 
                 <input type="text" class="form-control input-lg" id="editarCodigo" name="editarCodigo" readonly required>
               </div>
             </div>
             <!-- ENTRADA PARA LA DESCRIPCIÓN -->
-            <div class="form-group">
+             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
+                <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span> 
                 <input type="text" class="form-control input-lg" id="editarDescripcion" name="editarDescripcion" required>
               </div>
             </div>
-            <!-- ENTRADA PARA STOCK -->
-            <div class="form-group">
+             <!-- ENTRADA PARA STOCK -->
+             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-check"></i></span>
+                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
                 <input type="number" class="form-control input-lg" id="editarStock" name="editarStock" min="0" required>
               </div>
             </div>
-            <!-- ENTRADA PARA PRECIO COMPRA -->
-            <div class="form-group row">
-              <div class="col-xs-6">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span>
-                  <input type="number" class="form-control input-lg" id="editarPrecioCompra" name="editarPrecioCompra" step="any" min="0" required>
-                </div>
-              </div>
-              <!-- ENTRADA PARA PRECIO VENTA -->
-              <div class="col-xs-6">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span>
-                  <input type="number" class="form-control input-lg" id="editarPrecioVenta" name="editarPrecioVenta" step="any" min="0" readonly required>
-                </div>
-                <br>
-                <!-- CHECKBOX PARA PORCENTAJE -->
+             <!-- ENTRADA PARA PRECIO COMPRA -->
+             <div class="form-group row">
                 <div class="col-xs-6">
-                  <div class="form-group">
-                    <label>
-                      <input type="checkbox" class="minimal porcentaje" checked>
-                      Utilizar procentaje
-                    </label>
-                  </div>
-                </div>
-                <!-- ENTRADA PARA PORCENTAJE -->
-                <div class="col-xs-6" style="padding:0">
                   <div class="input-group">
-                    <input type="number" class="form-control input-lg nuevoPorcentaje" min="0" value="40" required>
-                    <span class="input-group-addon"><i class="fa fa-percent"></i></span>
+                    <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span> 
+                    <input type="number" class="form-control input-lg" id="editarPrecioCompra" name="editarPrecioCompra" step="any" min="0" required>
                   </div>
                 </div>
-              </div>
+                <!-- ENTRADA PARA PRECIO VENTA -->
+                <div class="col-xs-6">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span> 
+                    <input type="number" class="form-control input-lg" id="editarPrecioVenta" name="editarPrecioVenta" step="any" min="0" readonly required>
+                  </div>
+                  <br>
+                  <!-- CHECKBOX PARA PORCENTAJE -->
+                  <div class="col-xs-6">
+                    <div class="form-group">
+                      <label>
+                        <input type="checkbox" class="minimal porcentaje" checked>
+                        Utilizar procentaje
+                      </label>
+                    </div>
+                  </div>
+                  <!-- ENTRADA PARA PORCENTAJE -->
+                  <div class="col-xs-6" style="padding:0">
+                    <div class="input-group">
+                      <input type="number" class="form-control input-lg nuevoPorcentaje" min="0" value="40" required>
+                      <span class="input-group-addon"><i class="fa fa-percent"></i></span>
+                    </div>
+                  </div>
+                </div>
             </div>
             <!-- ENTRADA PARA SUBIR FOTO -->
-            <div class="form-group">
+             <div class="form-group">
               <div class="panel">SUBIR IMAGEN</div>
               <input type="file" class="nuevaImagen" name="editarImagen">
               <p class="help-block">Peso máximo de la imagen 2MB</p>
@@ -276,17 +276,17 @@ MODAL EDITAR PRODUCTO
         ======================================-->
         <div class="modal-footer">
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          <button type="submit" class="btn btn-default">Guardar cambios</button>
         </div>
       </form>
-      <?php
-      $editarProducto = new ControladorProductos();
-      $editarProducto->ctrEditarProducto();
-      ?>
+        <?php
+          $editarProducto = new ControladorProductos();
+          $editarProducto -> ctrEditarProducto();
+        ?>      
     </div>
   </div>
 </div>
 <?php
-$eliminarProducto = new ControladorProductos();
-$eliminarProducto->ctrEliminarProducto();
-?>
+  $eliminarProducto = new ControladorProductos();
+  $eliminarProducto -> ctrEliminarProducto();
+?>      
