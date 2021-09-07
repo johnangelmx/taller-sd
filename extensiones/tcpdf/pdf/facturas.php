@@ -43,15 +43,17 @@ class imprimirFactura
 					<br>
 					NIT: 71.759.963-9
 					<br>
-					Dirección: Calle 44B 92-11
+					Dirección: CARRETERA COSTERA KM. 219.5
+					30600 ESCUINTLA, Chis.
+					México
 				</div>
 	</td>
 	<td style="background-color:white; width:140px">
 				<div style="font-size:8.5px; text-align:right; line-height:15px;">
 					<br>
-					Teléfono: 300 786 52 49
+					Teléfono: 918 107 4882
 					<br>
-					ventas@inventorysystem.com
+					winchin74@hotmail.com
 				</div>
 			</td>
 			<td FONT COLOR="red" align="center" style="background-color:white; width:110px; text-align:center; color:#ff0000;"><br><br><strong style="color: red;">FACTURA N.<br>$valorVenta</strong></td>
