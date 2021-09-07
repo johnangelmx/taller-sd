@@ -5,9 +5,10 @@
         font-family: 'Poppins', sans-serif;
     }
 </style>
+<?php error_reporting(0); ?>
 <div class="login-box pop">
     <div class="login-logo">
-        <img src="vistas/img/car.png" alt="" style="width: 400px; height:200px">
+        <img src="vistas/img/car.png" class="img-responsive" style="width: 400px; height:200px">
     </div>
     <div class="login-box-body">
         <p class="login-box-msg">Ingresar Sus Credenciales</p>

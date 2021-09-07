@@ -111,32 +111,15 @@ ELIMINAR USUARIO
 $(document).on("click", ".btnEliminarUsuario", function () {
   var idUsuario = $(this).attr("idUsuario");
   var usuario = $(this).attr("usuario");
-
-//   Swal.fire({
-//     title: "¿Está seguro de borrar el usuario?",
-//     text: "¡Si no lo está puede cancelar la accíón!",
-//     icon: "warning",
-//     showCancelButton: true,
-//     confirmButtonColor: "#3085d6",
-//     cancelButtonColor: "#d33",
-//     cancelButtonText: "Cancelar",
-//     confirmButtonText: "Si, borrar usuario!",
-//   }).then(function (result) {
-//     if (result.value) {
-//       window.location =
-//         "index.php?ruta=usuarios&idUsuario=" +
-//         idUsuario +
-//         "&usuario=" +
-//         usuario;
-//     }
 Swal.fire({
-  title: 'Are you sure?',
-  text: "You won't be able to revert this!",
+  title: 'Esta Seguro De Eliminarlo?',
+  text: "No Podra Revertir Esta accion!",
   icon: 'warning',
   showCancelButton: true,
   confirmButtonColor: '#3085d6',
   cancelButtonColor: '#d33',
-  confirmButtonText: 'Yes, delete it!'
+  confirmButtonText: 'Si, Eliminar!',
+  cancelButtonText: 'Cancelar'
 }).then((result) => {
 	if (result.isConfirmed) {
 	  window.location =

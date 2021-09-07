@@ -14,6 +14,18 @@
                 </a>
             </li>
             <li>
+                <a href="categorias">
+                    <i class="fa fa-th"></i>
+                    <span>Categorías</span>
+                </a>
+            </li>
+            <li>
+                <a href="productos">
+                    <i class="fa fa-product-hunt"></i>
+                    <span>Productos Y Servicios</span>
+                </a>
+            </li>
+            <li>
                 <a href="clientes">
                     <i class="fa fa-users"></i>
                     <span>Clientes</span>

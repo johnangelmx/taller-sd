@@ -18,6 +18,8 @@ session_start();
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <link rel="shortcut icon" href="vistas/img/mecanico.png" type="image/x-icon">
   <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
+  <link rel="stylesheet" href="vistas/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="vistas/plugins/iCheck/all.css">
   <script src="vistas/bower_components/jquery/dist/jquery.js"></script>
   <script src="vistas/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
   <script src="vistas/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -26,9 +28,21 @@ session_start();
   <script src="vistas/bower_components/fastclick/lib/fastclick.js"></script>
   <script src="vistas/dist/js/adminlte.js"></script>
   <script src="vistas/dist/js/demo.js"></script>
-  <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
+  <script src="vistas/plugins/sa2/sweetalert2.all.js"></script>
   <script src="vistas/bower_components/datatables.net-bs/js/dataTables.responsive.min.js"></script>
   <script src="vistas/bower_components/datatables.net-bs/js/responsive.bootstrap.min.js"></script>
+
+  <!-- InputMask -->
+  <script src="vistas/plugins/input-mask/jquery.inputmask.js"></script>
+  <script src="vistas/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+  <script src="vistas/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+  <!-- date-range-picker -->
+  <script src="vistas/bower_components/moment/min/moment.min.js"></script>
+  <script src="vistas/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script src="vistas/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+  <script src="vistas/plugins/iCheck/icheck.min.js"></script>
+
+
   <style>
     .bc {
       background: #222d32;
@@ -62,6 +76,8 @@ session_start();
       if (
         $_GET['ruta'] == 'inicio' ||
         $_GET['ruta'] == 'usuarios' ||
+        $_GET['ruta'] == 'categorias' ||
+        $_GET['ruta'] == 'productos' ||
         $_GET['ruta'] == 'clientes' ||
         $_GET['ruta'] == 'ventas' ||
         $_GET['ruta'] == 'crear-venta' ||
@@ -81,9 +97,13 @@ session_start();
     include 'vistas/modulos/login.php';
   };
   ?>
+  <script src="vistas/plugins/sa2/sweetalert2.all.js"></script>
   <script src="vistas/js/plantilla.js"></script>
   <script src="vistas/js/usuarios.js"></script>
-  <script src="vistas/plugins/sa2/sweetalert2.all.js"></script>
+  <script src="vistas/js/clientes.js"></script>
+  <script src="vistas/js/categorias.js"></script>
+  <script src="vistas/js/productos.js"></script>
+
 </body>
 
 </html>
