@@ -36,7 +36,6 @@ class ControladorUsuarios
                         if ($ultimoLogin == "ok") {
                             echo '<script>  
 								window.location = "inicio";
-                                
 							</script>';
                         }
                     } else {
@@ -53,7 +52,6 @@ class ControladorUsuarios
                                   toast.addEventListener("mouseleave", Swal.resumeTimer)
                                 }
                               })
-                              
                               Toast.fire({
                                 icon: "error",
                                 title: "El usuario aún no está activado"
@@ -75,7 +73,6 @@ class ControladorUsuarios
                                   toast.addEventListener("mouseleave", Swal.resumeTimer)
                                 }
                               })
-                              
                               Toast.fire({
                                 icon: "error",
                                 title: "Error al ingresar, vuelve a intentarlo"
@@ -108,11 +105,9 @@ class ControladorUsuarios
 						confirmButtonText: "Cerrar"
 					}).then(function(result){
 						if(result.value){
-						
 							window.location = "usuarios";
 						}
 					});
-				
 				</script>';
                 }
             } else {
@@ -124,7 +119,6 @@ class ControladorUsuarios
 						confirmButtonText: "Cerrar"
 					}).then(function(result){
 						if(result.value){
-						
 							window.location = "usuarios";
 						}
 					});
@@ -132,7 +126,6 @@ class ControladorUsuarios
             }
         }
     }
-
     public static function ctrMostrarUsuarios($item, $valor)
     {
         $tabla = "usuarios";
@@ -207,12 +200,9 @@ class ControladorUsuarios
         if (isset($_GET["idUsuario"])) {
             $tabla = "usuarios";
             $datos = $_GET["idUsuario"];
-
             $respuesta = ModeloUsuarios::mdlBorrarUsuario($tabla, $datos);
-
             if ($respuesta == "ok") {
                 echo '<script>
-
 				Swal.fire({
                     icon: "success",
 					  title: "El usuario ha sido borrado correctamente",
@@ -220,12 +210,9 @@ class ControladorUsuarios
 					  confirmButtonText: "Cerrar"
 					  }).then(function(result){
 								if (result.value) {
-
 								window.location = "usuarios";
-
 								}
 							})
-
 				</script>';
             }
         }

@@ -48,7 +48,6 @@
                     <td>' . $value["fecha"] . '</td>
                     <td>
                       <div class="btn-group">
-
                         <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarCliente" idCliente="' . $value["id"] . '"><i class="fa fa-pencil"></i></button>
                         <button class="btn btn-danger btnEliminarCliente" idCliente="' . $value["id"] . '"><i class="fa fa-times"></i></button>
                       </div>  
@@ -185,20 +184,16 @@
             ?>
         </div>
     </div>
-
 </div>
 <?php
-
 $eliminarCliente = new ControladorClientes();
 $eliminarCliente->ctrEliminarCliente();
-
 ?>
 <script>
     //Date picker
     $('#datepicker').datepicker({
         autoclose: true
     })
-
     function mostrarContrasena() {
         var tipo = document.getElementById("password");
         if (tipo.type == "password") {
@@ -207,7 +202,6 @@ $eliminarCliente->ctrEliminarCliente();
             tipo.type = "password";
         }
     }
-
     //Datemask dd/mm/yyyy
     $('#datemask').inputmask('dd/mm/yyyy', {
         'placeholder': 'dd/mm/yyyy'

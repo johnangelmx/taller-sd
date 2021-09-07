@@ -49,7 +49,6 @@
                         <div class="btn-group">
                        <button class="btn btn-warning btnEditarUsuario" onclick="miFunc()" idUsuario="' . $value["id"] . '" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
                        <button class="btn btn-danger btnEliminarUsuario" idUsuario="' . $value["id"] . '" usuario="' . $value["usuario"] . '"><i class="fa fa-times"></i></button>
-
                           </div>
                         </td>
                       </tr>';
@@ -173,13 +172,9 @@
         </div>
       </div>
       <?php
-
       $borrarUsuario = new ControladorUsuarios();
       $borrarUsuario->ctrBorrarUsuario();
-
       ?>
-
-
       <script>
         function mostrarContrasena() {
           var tipo = document.getElementById("password");
@@ -189,7 +184,6 @@
             tipo.type = "password";
           }
         }
-
         function mostrarContrasenaE() {
           var tipo = document.getElementById("passwordE");
           if (tipo.type == "password") {
