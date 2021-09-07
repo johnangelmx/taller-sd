@@ -19,6 +19,10 @@ session_start();
   <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
   <link rel="stylesheet" href="vistas/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <link rel="stylesheet" href="vistas/plugins/iCheck/all.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="vistas/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="vistas/bower_components/morris.js/morris.css">
   <script src="vistas/bower_components/jquery/dist/jquery.js"></script>
   <script src="vistas/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
   <script src="vistas/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -39,6 +43,18 @@ session_start();
   <script src="vistas/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
   <script src="vistas/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
   <script src="vistas/plugins/iCheck/icheck.min.js"></script>
+  <script src="vistas/plugins/jqueryNumber/jquerynumber.min.js"></script>
+
+  <!-- daterangepicker http://www.daterangepicker.com/-->
+  <script src="vistas/bower_components/moment/min/moment.min.js"></script>
+  <script src="vistas/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Morris.js charts http://morrisjs.github.io/morris.js/-->
+  <script src="vistas/bower_components/raphael/raphael.min.js"></script>
+  <script src="vistas/bower_components/morris.js/morris.min.js"></script>
+
+  <!-- ChartJS http://www.chartjs.org/-->
+  <script src="vistas/bower_components/Chart.js/Chart.js"></script>
   <style>
     .bc {
       background: #222d32;
@@ -73,6 +89,7 @@ session_start();
         $_GET['ruta'] == 'clientes' ||
         $_GET['ruta'] == 'ventas' ||
         $_GET['ruta'] == 'crear-venta' ||
+        $_GET['ruta'] == 'editar-venta' ||
         $_GET['ruta'] == 'reportes' ||
         $_GET['ruta'] == 'salir'
       ) {
@@ -95,5 +112,6 @@ session_start();
   <script src="vistas/js/clientes.js"></script>
   <script src="vistas/js/categorias.js"></script>
   <script src="vistas/js/productos.js"></script>
+  <script src="vistas/js/ventas.js"></script>
 </body>
 </html>

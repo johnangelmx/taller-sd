@@ -30,14 +30,20 @@
                                 <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text">Likes</span>
-                                    <span class="info-box-number">41,410</span>
+                                    <span class="info-box-text">Servicios Realizados</span>
+                                    <?php
+                                    require_once "modelos/conexion.php";
+                                    $stmt = conexion::conectar()->prepare("SELECT SUM(compras) FROM clientes");
+                                    $stmt->execute();
+                                    $results = $stmt->fetch();
+                                    echo
+                                    '<span class="info-box-number" style="font-size: 32px;">' . $results[0] . '</span>';
+                                    ?>
 
                                     <div class="progress">
-                                        <div class="progress-bar" style="width: 70%"></div>
                                     </div>
                                     <span class="progress-description">
-                                        70% Increase in 30 Days
+                                        
                                     </span>
                                 </div>
                             </div>
@@ -48,14 +54,19 @@
                                 <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text">Events</span>
-                                    <span class="info-box-number">41,410</span>
-
+                                    <span class="info-box-text">Empleados</span>
+                                    <?php
+                                    require_once "modelos/conexion.php";
+                                    $stmt = conexion::conectar()->prepare("SELECT SUM(total) FROM ventas");
+                                    $stmt = conexion::conectar()->prepare("SELECT COUNT(id) FROM usuarios");
+                                    $stmt->execute();
+                                    $results = $stmt->fetch();
+                                    echo
+                                    '<span class="info-box-number" style="font-size: 32px;">' . $results[0] . '</span>';
+                                    ?>
                                     <div class="progress">
-                                        <div class="progress-bar" style="width: 70%"></div>
                                     </div>
                                     <span class="progress-description">
-                                        70% Increase in 30 Days
                                     </span>
                                 </div>
                                 <!-- /.info-box-content -->

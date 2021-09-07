@@ -44,7 +44,7 @@
                     <td>' . $value["direccion"] . '</td>
                     <td>' . $value["fecha_nacimiento"] . '</td>             
                     <td>' . $value["compras"] . '</td>
-                    <td>0000-00-00 00:00:00</td>
+                    <td>' . $value["ultima_compra"] . '</td>
                     <td>' . $value["fecha"] . '</td>
                     <td>
                       <div class="btn-group">
@@ -194,6 +194,7 @@ $eliminarCliente->ctrEliminarCliente();
     $('#datepicker').datepicker({
         autoclose: true
     })
+
     function mostrarContrasena() {
         var tipo = document.getElementById("password");
         if (tipo.type == "password") {
